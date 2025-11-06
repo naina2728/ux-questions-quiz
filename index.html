@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Knowledge Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <h1>UX Knowledge Quiz</h1>
+            <p class="subtitle">Test your understanding of user experience design principles</p>
+            <p class="description">Answer 10 questions to see how well you know UX fundamentals</p>
+            <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+            <div class="question-number">Question <span id="current-question">1</span> of 10</div>
+            <div class="question-container">
+                <h2 id="question-text"></h2>
+                <div id="options-container" class="options"></div>
+            </div>
+            <button id="next-btn" class="btn btn-primary" disabled>Next Question</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div id="certificate" class="certificate hidden">
+                <div class="certificate-content">
+                    <div class="certificate-icon">🏆</div>
+                    <h1>Congratulations!</h1>
+                    <p class="score-text">You scored <span id="final-score">0</span> out of 10</p>
+                    <p class="certificate-message">You have a solid understanding of UX principles!</p>
+                    <div class="certificate-decoration"></div>
+                </div>
+            </div>
+            <div id="sad-result" class="sad-result hidden">
+                <div class="sad-content">
+                    <div class="sad-icon">😔</div>
+                    <h1>Keep Learning!</h1>
+                    <p class="score-text">You scored <span id="sad-score">0</span> out of 10</p>
+                    <p class="sad-message">Don't worry, UX is a journey. Keep practicing and learning!</p>
+                    <div class="encouragement">Every expert was once a beginner</div>
+                </div>
+            </div>
+            <button id="restart-btn" class="btn btn-primary">Take Quiz Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
