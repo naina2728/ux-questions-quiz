@@ -149,14 +149,27 @@ function loadQuestion() {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
     progressFill.style.width = progress + '%';
     currentQuestionSpan.textContent = currentQuestion + 1;
+    
+    // Reset next button
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '';
 
-    // Create options
+    // Create options with stagger animation
     question.options.forEach((option, index) => {
         const optionElement = document.createElement('div');
         optionElement.className = 'option';
         optionElement.textContent = option;
+        optionElement.style.opacity = '0';
+        optionElement.style.transform = 'translateY(10px)';
         optionElement.addEventListener('click', () => selectAnswer(index));
         optionsContainer.appendChild(optionElement);
+        
+        // Stagger animation
+        setTimeout(() => {
+            optionElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            optionElement.style.opacity = '1';
+            optionElement.style.transform = 'translateY(0)';
+        }, index * 50);
     });
 }
 
@@ -167,6 +180,7 @@ function selectAnswer(index) {
     selectedAnswer = index;
     const options = document.querySelectorAll('.option');
     
+    // Add selected state immediately for feedback
     options.forEach((option, i) => {
         option.classList.remove('selected');
         if (i === index) {
@@ -174,16 +188,23 @@ function selectAnswer(index) {
         }
     });
 
-    nextBtn.disabled = false;
-
-    // Check if correct
-    if (index === questions[currentQuestion].correct) {
-        score++;
-        options[index].classList.add('correct');
-    } else {
-        options[index].classList.add('incorrect');
-        options[questions[currentQuestion].correct].classList.add('correct');
-    }
+    // Show feedback after a brief delay for better UX
+    setTimeout(() => {
+        // Check if correct
+        if (index === questions[currentQuestion].correct) {
+            score++;
+            options[index].classList.remove('selected');
+            options[index].classList.add('correct');
+        } else {
+            options[index].classList.remove('selected');
+            options[index].classList.add('incorrect');
+            options[questions[currentQuestion].correct].classList.add('correct');
+        }
+        
+        // Enable next button after showing feedback
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = '1';
+    }, 300);
 }
 
 // Next Question
@@ -200,17 +221,21 @@ function nextQuestion() {
 // Show Results
 function showResults() {
     quizScreen.classList.remove('active');
-    resultsScreen.classList.add('active');
+    
+    // Small delay for smooth transition
+    setTimeout(() => {
+        resultsScreen.classList.add('active');
 
-    if (score > 5) {
-        certificate.classList.remove('hidden');
-        sadResult.classList.add('hidden');
-        finalScore.textContent = score;
-    } else {
-        certificate.classList.add('hidden');
-        sadResult.classList.remove('hidden');
-        sadScore.textContent = score;
-    }
+        if (score > 5) {
+            certificate.classList.remove('hidden');
+            sadResult.classList.add('hidden');
+            finalScore.textContent = score;
+        } else {
+            certificate.classList.add('hidden');
+            sadResult.classList.remove('hidden');
+            sadScore.textContent = score;
+        }
+    }, 300);
 }
 
 // Restart Quiz
