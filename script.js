@@ -122,6 +122,8 @@ const certificate = document.getElementById('certificate');
 const sadResult = document.getElementById('sad-result');
 const finalScore = document.getElementById('final-score');
 const sadScore = document.getElementById('sad-score');
+const character = document.getElementById('character');
+const sadCharacter = document.getElementById('sad-character');
 
 // Event Listeners
 startBtn.addEventListener('click', startQuiz);
@@ -130,11 +132,14 @@ restartBtn.addEventListener('click', restartQuiz);
 
 // Start Quiz
 function startQuiz() {
-    welcomeScreen.classList.remove('active');
-    quizScreen.classList.add('active');
-    currentQuestion = 0;
-    score = 0;
-    loadQuestion();
+    welcomeScreen.style.animation = 'fadeOut 0.4s ease-out';
+    setTimeout(() => {
+        welcomeScreen.classList.remove('active');
+        quizScreen.classList.add('active');
+        currentQuestion = 0;
+        score = 0;
+        loadQuestion();
+    }, 400);
 }
 
 // Load Question
@@ -154,22 +159,26 @@ function loadQuestion() {
     nextBtn.disabled = true;
     nextBtn.style.opacity = '';
 
+    // Reset container animation
+    questionText.style.animation = '';
+    optionsContainer.style.opacity = '1';
+    
     // Create options with stagger animation
     question.options.forEach((option, index) => {
         const optionElement = document.createElement('div');
         optionElement.className = 'option';
         optionElement.textContent = option;
         optionElement.style.opacity = '0';
-        optionElement.style.transform = 'translateY(10px)';
+        optionElement.style.transform = 'translateY(15px)';
         optionElement.addEventListener('click', () => selectAnswer(index));
         optionsContainer.appendChild(optionElement);
         
-        // Stagger animation
+        // Stagger animation with easing
         setTimeout(() => {
-            optionElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            optionElement.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
             optionElement.style.opacity = '1';
             optionElement.style.transform = 'translateY(0)';
-        }, index * 50);
+        }, index * 60);
     });
 }
 
@@ -209,12 +218,45 @@ function selectAnswer(index) {
 
 // Next Question
 function nextQuestion() {
-    currentQuestion++;
+    // Add transition effect
+    questionText.style.animation = 'fadeOut 0.3s ease-out';
+    optionsContainer.style.opacity = '0';
     
-    if (currentQuestion < questions.length) {
-        loadQuestion();
+    setTimeout(() => {
+        currentQuestion++;
+        
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    }, 300);
+}
+
+// Get Character Based on Score
+function getCharacter(score) {
+    if (score === 10) {
+        return { emoji: '🌟', message: 'Perfect Score! You\'re a UX Master!' };
+    } else if (score === 9) {
+        return { emoji: '🎉', message: 'Amazing! You\'re almost perfect!' };
+    } else if (score === 8) {
+        return { emoji: '🎊', message: 'Excellent work! You really know your stuff!' };
+    } else if (score === 7) {
+        return { emoji: '😊', message: 'Great job! You have strong UX knowledge!' };
+    } else if (score === 6) {
+        return { emoji: '👍', message: 'Good work! Keep up the learning!' };
+    } else if (score === 5) {
+        return { emoji: '🤔', message: 'Not bad! There\'s room to grow!' };
+    } else if (score === 4) {
+        return { emoji: '💪', message: 'Keep practicing! You\'re getting there!' };
+    } else if (score === 3) {
+        return { emoji: '📚', message: 'Learning is a journey! Keep studying!' };
+    } else if (score === 2) {
+        return { emoji: '🔍', message: 'Don\'t give up! Review and try again!' };
+    } else if (score === 1) {
+        return { emoji: '🌱', message: 'Every expert started as a beginner!' };
     } else {
-        showResults();
+        return { emoji: '💡', message: 'Time to dive into UX fundamentals!' };
     }
 }
 
@@ -226,26 +268,44 @@ function showResults() {
     setTimeout(() => {
         resultsScreen.classList.add('active');
 
+        const characterData = getCharacter(score);
+
         if (score > 5) {
             certificate.classList.remove('hidden');
             sadResult.classList.add('hidden');
             finalScore.textContent = score;
+            character.textContent = characterData.emoji;
+            // Update message if needed
+            const messageEl = document.querySelector('.certificate-message');
+            if (messageEl) {
+                messageEl.textContent = characterData.message;
+            }
         } else {
             certificate.classList.add('hidden');
             sadResult.classList.remove('hidden');
             sadScore.textContent = score;
+            sadCharacter.textContent = characterData.emoji;
+            // Update message
+            const messageEl = document.querySelector('.sad-message');
+            if (messageEl) {
+                messageEl.textContent = characterData.message;
+            }
         }
     }, 300);
 }
 
 // Restart Quiz
 function restartQuiz() {
-    resultsScreen.classList.remove('active');
-    welcomeScreen.classList.add('active');
-    certificate.classList.add('hidden');
-    sadResult.classList.add('hidden');
-    currentQuestion = 0;
-    score = 0;
-    progressFill.style.width = '0%';
+    resultsScreen.style.animation = 'fadeOut 0.4s ease-out';
+    setTimeout(() => {
+        resultsScreen.classList.remove('active');
+        welcomeScreen.classList.add('active');
+        certificate.classList.add('hidden');
+        sadResult.classList.add('hidden');
+        currentQuestion = 0;
+        score = 0;
+        progressFill.style.width = '0%';
+        welcomeScreen.style.animation = 'welcomeSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+    }, 400);
 }
 
