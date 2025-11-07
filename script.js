@@ -3,19 +3,19 @@ const questions = [
     {
         question: "What is the primary goal of user-centered design?",
         options: [
-            "To make products look beautiful",
+            "To make products look beautiful and trendy",
             "To prioritize user needs and create intuitive experiences",
-            "To use the latest design trends",
-            "To minimize development costs"
+            "To use the latest design trends and styles",
+            "To minimize development costs and time"
         ],
         correct: 1
     },
     {
         question: "What does 'affordance' mean in UX design?",
         options: [
-            "The cost of a design feature",
+            "The cost and budget of a design feature",
             "A visual cue that suggests how an object should be used",
-            "The time it takes to complete a task",
+            "The time and effort it takes to complete a task",
             "The number of clicks needed to reach a page"
         ],
         correct: 1
@@ -23,60 +23,60 @@ const questions = [
     {
         question: "What is the recommended maximum number of items in a navigation menu?",
         options: [
-            "5-7 items",
-            "10-12 items",
-            "15-20 items",
-            "As many as needed"
+            "5-7 items for optimal usability",
+            "10-12 items for better navigation",
+            "15-20 items for comprehensive access",
+            "As many as needed for full coverage"
         ],
         correct: 0
     },
     {
         question: "What is the purpose of a user persona?",
         options: [
-            "To show design skills to clients",
+            "To show design skills and expertise to clients",
             "To represent a fictional user based on research to guide design decisions",
-            "To track user analytics",
-            "To create marketing materials"
+            "To track user analytics and behavior patterns",
+            "To create marketing materials and campaigns"
         ],
         correct: 1
     },
     {
         question: "What does 'progressive disclosure' mean?",
         options: [
-            "Showing all information at once",
+            "Showing all information at once for clarity",
             "Revealing information gradually to reduce cognitive load",
-            "Hiding important features",
-            "Using progressive web apps"
+            "Hiding important features from users",
+            "Using progressive web apps for better performance"
         ],
         correct: 1
     },
     {
         question: "What is the 'F-pattern' in UX design?",
         options: [
-            "A design layout pattern",
+            "A design layout pattern for mobile apps",
             "A common eye-tracking pattern showing how users scan content",
-            "A color scheme",
-            "A typography style"
+            "A color scheme using primary colors",
+            "A typography style for headings and text"
         ],
         correct: 1
     },
     {
         question: "What is the main purpose of usability testing?",
         options: [
-            "To make the product look better",
+            "To make the product look better and more attractive",
             "To observe real users interacting with a product and identify issues",
-            "To increase website traffic",
-            "To reduce server costs"
+            "To increase website traffic and user engagement",
+            "To reduce server costs and improve performance"
         ],
         correct: 1
     },
     {
         question: "What does 'cognitive load' refer to?",
         options: [
-            "Server processing power",
+            "Server processing power and computational resources",
             "The amount of mental effort required to use a product",
-            "The file size of images",
-            "The number of pages in a website"
+            "The file size of images and media assets",
+            "The number of pages and sections in a website"
         ],
         correct: 1
     },
@@ -84,19 +84,19 @@ const questions = [
         question: "What is the '3-click rule' in UX?",
         options: [
             "Users should be able to find any information within 3 clicks",
-            "Users should click 3 times before purchasing",
-            "Users need 3 clicks to log in",
-            "There should be 3 navigation levels"
+            "Users should click 3 times before making a purchase",
+            "Users need exactly 3 clicks to log in securely",
+            "There should be exactly 3 navigation levels maximum"
         ],
         correct: 0
     },
     {
         question: "What is the difference between UX and UI?",
         options: [
-            "They are the same thing",
+            "They are the same thing with different names",
             "UX focuses on the overall experience, while UI focuses on visual design",
-            "UX is for web, UI is for mobile",
-            "UX is free, UI costs money"
+            "UX is for web applications, UI is for mobile apps",
+            "UX is free to use, UI requires payment and licensing"
         ],
         correct: 1
     }
