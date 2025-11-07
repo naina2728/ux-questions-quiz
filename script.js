@@ -3,100 +3,100 @@ const questions = [
     {
         question: "What is the primary goal of user-centered design?",
         options: [
-            "To make products look beautiful and trendy",
+            "To craft visually delightful interfaces for everyone",
             "To prioritize user needs and create intuitive experiences",
-            "To use the latest design trends and styles",
-            "To minimize development costs and time"
+            "To implement fashionable design trends across products",
+            "To optimize project budgets and accelerate delivery timelines"
         ],
         correct: 1
     },
     {
         question: "What does 'affordance' mean in UX design?",
         options: [
-            "The cost and budget of a design feature",
-            "A visual cue that suggests how an object should be used",
-            "The time and effort it takes to complete a task",
-            "The number of clicks needed to reach a page"
+            "The cost and budget assigned to a design initiative",
+            "A perceptual cue that signals how something should be used",
+            "The time investment required to learn a digital interface",
+            "The number of interactions needed to complete a journey"
         ],
         correct: 1
     },
     {
         question: "What is the recommended maximum number of items in a navigation menu?",
         options: [
-            "5-7 items for optimal usability",
-            "10-12 items for better navigation",
-            "15-20 items for comprehensive access",
-            "As many as needed for full coverage"
+            "Keeping navigation between five and seven items for clarity",
+            "Expanding navigation to ten or twelve items for flexibility",
+            "Listing fifteen to twenty items so nothing gets hidden away",
+            "Adding as many navigation items as stakeholders request"
         ],
         correct: 0
     },
     {
         question: "What is the purpose of a user persona?",
         options: [
-            "To show design skills and expertise to clients",
-            "To represent a fictional user based on research to guide design decisions",
-            "To track user analytics and behavior patterns",
-            "To create marketing materials and campaigns"
+            "To showcase design expertise and make stakeholders impressed",
+            "To represent a researched archetype that guides decisions",
+            "To monitor analytics dashboards and convert user behavior",
+            "To craft marketing copy and beautiful promotional material"
         ],
         correct: 1
     },
     {
         question: "What does 'progressive disclosure' mean?",
         options: [
-            "Showing all information at once for clarity",
-            "Revealing information gradually to reduce cognitive load",
-            "Hiding important features from users",
-            "Using progressive web apps for better performance"
+            "Revealing every single detail instantly for transparency",
+            "Releasing information gradually so people stay focused",
+            "Hiding the primary functionality until users unlock it",
+            "Building progressive web applications for faster loading"
         ],
         correct: 1
     },
     {
         question: "What is the 'F-pattern' in UX design?",
         options: [
-            "A design layout pattern for mobile apps",
-            "A common eye-tracking pattern showing how users scan content",
-            "A color scheme using primary colors",
-            "A typography style for headings and text"
+            "A visual layout template tailored for mobile-first projects",
+            "A scanning behavior showing people read in an F shape",
+            "A monochrome color palette used for minimalist branding",
+            "A typographic hierarchy that emphasizes key headings"
         ],
         correct: 1
     },
     {
         question: "What is the main purpose of usability testing?",
         options: [
-            "To make the product look better and more attractive",
-            "To observe real users interacting with a product and identify issues",
-            "To increase website traffic and user engagement",
-            "To reduce server costs and improve performance"
+            "To polish the aesthetics so the interface feels premium",
+            "To watch real users work through tasks and spot friction",
+            "To drive organic traffic and boost overall conversion rates",
+            "To streamline server infrastructure and reduce hosting costs"
         ],
         correct: 1
     },
     {
         question: "What does 'cognitive load' refer to?",
         options: [
-            "Server processing power and computational resources",
-            "The amount of mental effort required to use a product",
-            "The file size of images and media assets",
-            "The number of pages and sections in a website"
+            "The processing throughput available on backend servers",
+            "The mental effort demanded to understand a product",
+            "The media storage footprint required for interface assets",
+            "The total count of screens contained within an experience"
         ],
         correct: 1
     },
     {
         question: "What is the '3-click rule' in UX?",
         options: [
-            "Users should be able to find any information within 3 clicks",
-            "Users should click 3 times before making a purchase",
-            "Users need exactly 3 clicks to log in securely",
-            "There should be exactly 3 navigation levels maximum"
+            "Ensuring people can reach their goal within three clicks",
+            "Requiring shoppers to click three times before purchasing",
+            "Mandating exactly three clicks every time someone logs in",
+            "Limiting information architecture to only three navigation tiers"
         ],
         correct: 0
     },
     {
         question: "What is the difference between UX and UI?",
         options: [
-            "They are the same thing with different names",
-            "UX focuses on the overall experience, while UI focuses on visual design",
-            "UX is for web applications, UI is for mobile apps",
-            "UX is free to use, UI requires payment and licensing"
+            "They describe identical concepts using different vocabulary",
+            "UX is the experience journey, UI is the visual interface",
+            "UX focuses on desktop apps while UI focuses on mobile apps",
+            "UX deliverables are free whereas UI assets require licensing"
         ],
         correct: 1
     }
